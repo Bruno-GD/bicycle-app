@@ -20,8 +20,4 @@ app.use((req, res, next) => {
     return res.status(404).send('Not found');
 });
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log('Server is running on port http://localhost:' + PORT);
-});
+module.exports = app;

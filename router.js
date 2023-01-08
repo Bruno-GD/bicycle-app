@@ -7,5 +7,10 @@ const router = Router();
 // Define routes
 router.use('/api', bicycleRoutes);
 
+// default
+router.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
 // Export the router
 module.exports = router;
