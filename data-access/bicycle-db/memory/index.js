@@ -7,17 +7,17 @@ LAST_ID = Math.max(...DATA.map(b => b.id));
  * @returns {[{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date},{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}]|{}}
  */
 function findAll() {
-    return DATA;
+    return Promise.resolve(DATA);
 }
 
 /**
  * Filter bicycles with a given filter
  * @param key - key to find
  * @param value - value to filter
- * @returns {{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date} | {image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}}
+ * @returns Promise{{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date} | {image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}}
  */
 function findBy(key, value) {
-    return DATA.find(f => f[key].toString() === value);
+    return Promise.resolve(DATA.find(f => f[key].toString() === value));
 }
 
 /**
@@ -25,11 +25,11 @@ function findBy(key, value) {
  * and returns the deleted object
  * @param key - key to find
  * @param value - value to filter
- * @returns {({image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}|{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date})[]}
+ * @returns Promise{({image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}|{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date})[]}
  */
 function deleteBy(key, value) {
     let idx = DATA.findIndex(f => f[key].toString() === value);
-    return DATA.splice(idx, 1);
+    return Promise.resolve(DATA.splice(idx, 1));
 }
 
 /**
@@ -45,7 +45,7 @@ function create(bicycle) {
 
     valid.value.id = ++LAST_ID;
     DATA.push(valid.value);
-    return valid.value;
+    return Promise.resolve(valid.value);
 }
 
 /**
@@ -67,7 +67,7 @@ function update(key, value, bicycle) {
     bicycle.createdAt = DATA[idx].createdAt;
     bicycle.updatedAt = new Date();
     DATA[idx] = bicycle;
-    return bicycle;
+    return Promise.resolve(bicycle);
 }
 
 module.exports = {

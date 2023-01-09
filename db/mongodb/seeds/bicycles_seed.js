@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Bicycle = require('../models/bicycle');
 
-mongoose.connection.collection['bicycles'].drop(async function() {
+mongoose.connection.collections.bicycles.drop(async function() {
     await Bicycle.create([
         {
             name: "Bicicleta 1",
@@ -31,6 +31,5 @@ mongoose.connection.collection['bicycles'].drop(async function() {
         }
     ]);
 
-    mongoose.connection.close();
     console.log('Bicycles populated');
 });

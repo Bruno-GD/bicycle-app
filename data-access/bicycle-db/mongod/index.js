@@ -14,7 +14,7 @@ function findAll() {
  * Filter bicycles with a given filter
  * @param key - key to find
  * @param value - value to filter
- * @returns {{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date} | {image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}}
+ * @returns Promise{{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date} | {image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}}
  */
 function findBy(key, value) {
     return Bicycle.find({[key]: value}).then(serialize);
@@ -25,7 +25,7 @@ function findBy(key, value) {
  * and returns the deleted object
  * @param key - key to find
  * @param value - value to filter
- * @returns {({image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}|{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date})[]}
+ * @returns Promise{({image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date}|{image: string, createdAt: Date, color: string, price: number, name: string, weight: number, description: string, id: number, category: string, stock: number, brand: string, updatedAt: Date})[]}
  */
 function deleteBy(key, value) {
     return Bicycle.findOneAndDelete({[key]: value}).then(serialize);
@@ -59,7 +59,9 @@ function update(key, value, bicycle) {
     if (valid.error)
         throw valid.error;
 
-    return Bicycle.updateOne({[key]: value}, valid.value).then(serialize);
+    return Bicycle
+        .findOneAndUpdate({[key]: value}, valid.value, {returnOriginal: false})
+        .then(serialize);
 }
 
 module.exports = {
