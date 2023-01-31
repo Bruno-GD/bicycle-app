@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "type": "msedge",
+            "name": "Launch Microsoft Edge",
+            "request": "attach",
+            "url": "http://localhost:3000",
+            "presentation": {
+                "hidden": false
+            }
+        }
+    ]
+}

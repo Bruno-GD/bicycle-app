@@ -1,27 +1,28 @@
 {
   "name": "bicycle-app",
-  "type": "commonjs",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "jest"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "express",
+    "rest api"
+  ],
+  "author": "Bruno Golomb Duran",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "joi": "^17.7.0",
-    "mongoose": "^6.8.3"
+    "mongoose": "^6.9.0"
   },
   "devDependencies": {
-    "@jest/globals": "^29.3.1",
     "jest": "^29.3.1",
-    "nodemon": "^2.0.20",
     "supertest": "^6.3.3"
   }
 }
