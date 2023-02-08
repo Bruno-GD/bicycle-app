@@ -1,0 +1,3 @@
+[submodule "bicycle-app-vue"]
+	path = bicycle-app-vue
+	url = https://github.com/Bruno-GD/bicycle-app-vue.git
