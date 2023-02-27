@@ -5,9 +5,6 @@ const app = express();
 // Middleware
 app.use(cors());
 
-// Frontend
-app.use(express.static('dist'));
-
 // Routes
 app.use(require('./routes'));
 
