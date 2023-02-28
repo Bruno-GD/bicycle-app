@@ -1,0 +1,1 @@
+const BikesPage = createElement("div", null, createElement("h1", null, "Bikes"));

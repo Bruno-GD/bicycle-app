@@ -5,8 +5,11 @@ const app = express();
 // Middleware
 app.use(cors());
 
+// Static
+app.use('/', express.static('public'));
+
 // Routes
-app.use(require('./routes'));
+app.use('/api', require('./routes'));
 
 // Error Handling
 app.use((err, req, res, next) => {

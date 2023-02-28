@@ -1,0 +1,36 @@
+div.card {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: white;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+}
+
+div.card-body {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+h5.card-title {
+    font-size: 1.25rem;
+    line-height: 1.56875;
+    font-weight: bold;
+    color: #363636;
+    margin-bottom: 0.625rem;
+}
+
+h6.card-subtitle {
+    font-size: 1rem;
+    line-height: 1.47;
+    font-weight: bold;
+    color: #909090;
+    margin-bottom: 0.8125rem;
+}
+
+p.card-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #202428;
+}

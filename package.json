@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm run build",
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "build": "npx sass --no-source-map src/css/style.scss public/css/style.css && babel src -d public",
     "test": "jest"
   },
   "keywords": [
@@ -22,7 +24,11 @@
     "mongoose": "^6.9.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.0",
+    "@babel/core": "^7.21.0",
+    "@babel/plugin-transform-react-jsx": "^7.21.0",
     "jest": "^29.3.1",
+    "sass": "^1.58.3",
     "supertest": "^6.3.3"
   }
 }

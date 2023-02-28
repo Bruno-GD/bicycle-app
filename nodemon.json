@@ -1,0 +1,10 @@
+{
+    "ignore": [
+        "public",
+        ".vscode",
+        "__test__",
+        "*.test.js"
+    ],
+    "ext": "js,jsx,css,html",
+    "exec": "npm start"
+}
