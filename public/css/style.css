@@ -487,6 +487,8 @@ div.card {
   background-color: white;
   border: 1px solid #dbdbdb;
   border-radius: 5px;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 div.card-body {
@@ -514,6 +516,10 @@ p.card-text {
   font-size: 1rem;
   line-height: 1.5;
   color: #202428;
+}
+
+#home-page {
+  margin-left: 15px;
 }
 
 header {

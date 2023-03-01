@@ -25,7 +25,7 @@ const createElement = (tag, props, ...children) => {
 const appendChild = (parent, child) => {
     if (Array.isArray(child))
         child.forEach(nestedChild => appendChild(parent, nestedChild));
-    else
+    else if (child !== undefined && child !== null)
         parent.appendChild(child.nodeType ? child : document.createTextNode(child));
 };
 

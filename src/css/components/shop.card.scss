@@ -6,6 +6,8 @@ div.card {
     background-color: white;
     border: 1px solid #dbdbdb;
     border-radius: 5px;
+    width: -moz-fit-content; // Firefox support
+    width: fit-content;
 }
 
 div.card-body {

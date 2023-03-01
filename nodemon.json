@@ -5,6 +5,6 @@
         "__test__",
         "*.test.js"
     ],
-    "ext": "js,jsx,css,html",
+    "ext": "js,jsx,scss",
     "exec": "npm start"
 }

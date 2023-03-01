@@ -1,14 +1,24 @@
-let shops = [{
-  name: "The Coffee House",
-  address: "123 Main St",
-  description: "A great place to get coffee"
-}, {
-  name: "The Tea House",
-  address: "456 Main St",
-  description: "A great place to get tea"
-}];
-const HomePage = createElement("div", null, createElement("h1", null, "Home"), createElement("ul", {
-  class: ""
+let shops = [];
+const HomePage = createElement("div", null, createElement("div", {
+  id: "home-page"
+}, createElement("h1", null, "Home"), createElement("ul", {
+  id: "shop-list"
 }, shops.map((shop, index) => createElement("li", null, createElement(ShopCard, {
   shop: shop
-})))));
+}))))));
+window.onload = () => {
+  fetch("/api/shop", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }).then(response => response.json()).then(data => {
+    shops = data;
+    let lis = shops.map((shop, index) => createElement("li", null, createElement(ShopCard, {
+      shop: shop
+    })).innerHTML);
+    document.getElementById("shop-list").innerHTML = lis.join('');
+  }).catch(error => {
+    console.error("Error:", error);
+  });
+};
