@@ -7,7 +7,7 @@
     "prestart": "npm run build",
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "build": "npx sass --no-source-map src/css/style.scss public/css/style.css && babel src -d public",
+    "build": "npx sass --no-source-map src/css/style.scss public/css/style.css && npx babel src -d public",
     "test": "jest"
   },
   "keywords": [

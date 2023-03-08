@@ -56,10 +56,17 @@ main {
 }
 
 /* footer */
-footer {
+/* footer {
     width: 100%;
     position: relative;
     height: auto;
+    background-color: #070617;
+} */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
     background-color: #070617;
 }
 
@@ -132,7 +139,7 @@ footer .col ul li:hover {
         width: 1000px;
         display: block;
     }
-
+    
     .social h1 {
         margin: 0px;
     }
@@ -142,11 +149,11 @@ footer .col ul li:hover {
     footer .col {
         width: 33%;
     }
-
+    
     footer .col h1 {
         font-size: 14px;
     }
-
+    
     footer .col ul li {
         font-size: 13px;
     }
@@ -156,11 +163,11 @@ footer .col ul li:hover {
     footer .col {
         width: 50%;
     }
-
+    
     footer .col h1 {
         font-size: 14px;
     }
-
+    
     footer .col ul li {
         font-size: 13px;
     }

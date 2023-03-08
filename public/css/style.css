@@ -576,10 +576,17 @@ main {
 }
 
 /* footer */
+/* footer {
+    width: 100%;
+    position: relative;
+    height: auto;
+    background-color: #070617;
+} */
 footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  position: relative;
-  height: auto;
   background-color: #070617;
 }
 

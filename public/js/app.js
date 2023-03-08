@@ -4,7 +4,6 @@ const routes = {
 }
 
 const rootDiv = document.getElementById('root');
-rootDiv.innerHTML = routes[window.location.pathname].innerHTML;
 
 let current = document.querySelector('.active');
 const navigateTo = (pathname, el) => {
@@ -16,13 +15,19 @@ const navigateTo = (pathname, el) => {
     )
     // Update the content of the page
     rootDiv.innerHTML = routes[window.location.pathname].innerHTML;
-    current.classList.remove('active');
+    current?.classList.remove('active');
     el.classList.add('active');
     // Update the current variable
     current = el;
+    routes[window.location.pathname].dispatchEvent(new Event('load'));
 }
 
 // This event listener is triggered when the user clicks on a link
 window.onpopstate = () => {
     rootDiv.innerHTML = routes[window.location.pathname].innerHTML;
 }
+
+window.addEventListener('load', () => {
+    // load current path
+    navigateTo(window.location.pathname, document.querySelector(`a[data-link="${window.location.pathname}"]`));
+});

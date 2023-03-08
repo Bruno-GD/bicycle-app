@@ -14,6 +14,7 @@
     <script src="js/jsx.js"></script>
     <!-- components -->
     <script src="js/components/shop.card.js"></script>
+    <script src="js/components/bike.card.js"></script>
     <!-- pages -->
     <script src="js/pages/home.js"></script>
     <script src="js/pages/bikes.js"></script>
@@ -27,10 +28,10 @@
                 <img src="assets/logo.png" alt="brand logo" width="50em">
             </li>
             <li>
-                <a href="#" class="active" onclick="navigateTo('/', this); return false;">Home</a>
+                <a href="#" data-link="/" onclick="navigateTo('/', this); return false;">Home</a>
             </li>
             <li>
-                <a href="#" onclick="navigateTo('/bikes', this); return false;">Bikes</a>
+                <a href="#" data-link="/bikes" onclick="navigateTo('/bikes', this); return false;">Bikes</a>
             </li>
         </ul>
     </header>
@@ -47,26 +48,20 @@
                 <h1>Company</h1>
                 <ul>
                     <li>About</li>
-                    <li>Mission</li>
-                    <li>Services</li>
-                    <li>Social</li>
-                    <li>Get in touch</li>
                 </ul>
             </div>
             <div class="col">
                 <h1>Support</h1>
                 <ul>
                     <li>Contact us</li>
-                    <li>Web chat</li>
-                    <li>Open ticket</li>
                 </ul>
             </div>
             <div class="col social">
                 <h1>Social</h1>
                 <ul>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/4494/4494481.png" width="32" alt="twitter"></li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/3955/3955024.png" width="32" alt="instagram"></li>
-                    <li><img src="https://cdn-icons-png.flaticon.com/512/3670/3670124.png" width="32" alt="social"></li>
+                    <li><img src="assets/twitter.png" width="32" alt="twitter"></li>
+                    <li><img src="assets/instagram.png" width="32" alt="instagram"></li>
+                    <li><img src="assets/facebook.png" width="32" alt="social"></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

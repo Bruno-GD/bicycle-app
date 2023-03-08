@@ -15,7 +15,7 @@ const HomePage = (
     </div>
 );
 
-window.onload = () => {
+HomePage.addEventListener("load", () => {
     fetch("/api/shop", {
         method: "GET",
         headers: {
@@ -35,4 +35,4 @@ window.onload = () => {
     .catch(error => {
         console.error("Error:", error);
     });
-}
+});

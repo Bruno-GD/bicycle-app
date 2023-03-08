@@ -6,7 +6,7 @@ const HomePage = createElement("div", null, createElement("div", {
 }, shops.map((shop, index) => createElement("li", null, createElement(ShopCard, {
   shop: shop
 }))))));
-window.onload = () => {
+HomePage.addEventListener("load", () => {
   fetch("/api/shop", {
     method: "GET",
     headers: {
@@ -21,4 +21,4 @@ window.onload = () => {
   }).catch(error => {
     console.error("Error:", error);
   });
-};
+});
