@@ -9,25 +9,26 @@ app.use(cors());
 
 // Static
 // match all excluding /api/*
-app.use(function(req, res, next) {
-    let reqPath = path.join(__dirname, 'public', req.path)
+app.all(/^(?!\/api).*/, function(req, res, next) {
+    let reqPath = path.join(__dirname, '..', 'public', req.path)
     if (req.path === '/') reqPath = path.join(__dirname, '..', 'public', 'index.html')
     // path inside public/ folder exists?
     if (fs.existsSync(reqPath)) {
         // yes, serve it
+        req.file = req.path;
         next();
     }
     else {
         // no, serve index.html
-        req.url = '/';
+        req.file = '/';
         next();
     }
 }, function(req, res, next) {
-    if (req.path === '/') {
+    if (req.file === '/') {
         res.sendFile(path.join(__dirname, '..', 'public', 'index.html'));
     }
     else {
-        res.sendFile(path.join(__dirname, '..', 'public', req.path));
+        res.sendFile(path.join(__dirname, '..', 'public', req.file));
     }
 });
 
